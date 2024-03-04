@@ -1,0 +1,30 @@
+package ch11.sec02.exam01;
+
+public class ExceptionHandling2 {
+    public static void main(String[] args) {
+        System.out.println("[프로그램 시작]");
+        printLength("TfisIsJava");
+        printLength(null);
+        System.out.println("[프로그램 종료]");
+
+    }
+
+    public static void printLength(String data){
+        //예외처리 코드 작성
+        //try=시도하다
+        //시도 할 코드(예외발생 가능성 있는 코드)
+        try {
+            int result = data.length();
+            System.out.println("문자 수: "+result);
+            //catch=잡다
+            //인셉션을 잡겠다는 의미
+        }catch (NullPointerException e){
+//            System.out.println(e.getMessage());//예외가 발생한 이유만 리턴
+//            System.out.println(e.toString());//예외의 종류 + 예외가 발생한 이유 리턴
+            e.printStackTrace();//예외의 종류+이유+경로를 리턴
+        }finally {
+            System.out.println("[마무리 실행]");
+        }
+    }
+
+}
