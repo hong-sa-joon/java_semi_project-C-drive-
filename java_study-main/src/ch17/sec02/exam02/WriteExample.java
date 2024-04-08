@@ -1,0 +1,24 @@
+package ch17.sec02.exam02;
+
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+
+public class WriteExample {
+    public static void main(String[] args) {
+        try {
+          OutputStream os = new FileOutputStream("C:/Temp/test2.db");
+
+        byte[]array ={10,20,30,40,50};
+
+        os.write(array, 1,3);
+
+        //버퍼의 쌓인 데이터를 전송
+        os.flush();
+        
+        //버퍼를 끈다
+        os.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
